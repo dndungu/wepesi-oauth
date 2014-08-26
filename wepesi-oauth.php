@@ -12,7 +12,9 @@ function wepesi_oauth_init($vars = ''){
 }
 
 add_filter('request', 'wepesi_oauth_request');
-function wepesi_oauth_request($vars = ''){
-	print json_encode($vars);
+function wepesi_oauth_request($vars = i''){
+	if($vars['attachment'] != 'authorize')
+		return $vars;
+	
 	return $vars;
 }
